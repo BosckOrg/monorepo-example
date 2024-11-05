@@ -31,7 +31,7 @@ jobs:
           args: -Dproject.settings=packages/simple-react-app/sonar-scanner.properties
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_SECRET_2 }}
-          SONAR_HOST_URL: https://gbqipwdfkw.a.pinggy.link/sessions/new?return_to=%2F
+          SONAR_HOST_URL: https://gbqipwdfkw.a.pinggy.link
 
       # - uses: sonarsource/sonarqube-quality-gate-action@master
       #   timeout-minutes: 5
