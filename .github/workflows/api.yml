@@ -1,4 +1,4 @@
-name: SonarQube Analysis
+name: Client SonarQube Analysis
 on:
   pull_request:
     branches:
@@ -14,6 +14,8 @@ jobs:
 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
+        with:
+          projectBaseDir: ./packages/simple-express-server
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_SECRET_2 }}
           SONAR_HOST_URL: https://d4ef-171-103-29-110.ngrok-free.app
