@@ -16,7 +16,7 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_SECRET_2 }}
-          SONAR_HOST_URL: https://1e13-171-103-29-110.ngrok-free.app/
+          SONAR_HOST_URL: https://d4ef-171-103-29-110.ngrok-free.app
 
       # - uses: sonarsource/sonarqube-quality-gate-action@master
       #   timeout-minutes: 5
