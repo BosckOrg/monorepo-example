@@ -1,0 +1,6 @@
+{
+  "sonarlint.connectedMode.project": {
+    "connectionId": "http-localhost-9001",
+    "projectKey": "BosckOrg_monorepo-example_63b9c822-f29c-4ef3-9ab6-771fbed35ab0"
+  }
+}
