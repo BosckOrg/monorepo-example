@@ -11,7 +11,7 @@ app.use((_req, res, next) => {
   // Continue to next middleware
   next();
 });
-
+console.log(QueryPayload);
 app.get("/", (_req, res) => {
   const responseData: QueryPayload = {
     payload: _.snakeCase("Server data returned successfully"),

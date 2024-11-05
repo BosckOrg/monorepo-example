@@ -6,6 +6,7 @@ import { QueryPayload } from "@my-namespace/simple-shared-data";
 import DarkMode from "./react-dark-mode/src/DarkMode";
 
 function App() {
+  console.log(QueryPayload);
   return (
     <div className="App">
       <header className="App-header">
