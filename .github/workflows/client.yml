@@ -1,0 +1,39 @@
+name: API SonarQube Analysis
+on:
+  push:
+    paths:
+      -  'packages/simple-express-server/**'
+      - '.github/workflows/**'
+    branches:
+      - master
+
+  pull_request:
+    paths:
+      -  'packages/simple-express-server/**'
+      - '.github/workflows/**'
+    types:
+      - opened
+      - synchronize
+      - reopened
+jobs:
+  sonarqube:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        with:
+          projectBaseDir: packages/simple-express-server
+          args: -Dproject.settings=packages/simple-express-server/sonar-scanner.properties
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_SECRET_2 }}
+          SONAR_HOST_URL: https://gbqipwdfkw.a.pinggy.link
+
+      # - uses: sonarsource/sonarqube-quality-gate-action@master
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
