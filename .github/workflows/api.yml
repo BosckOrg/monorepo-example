@@ -28,6 +28,7 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@master
         with:
           projectBaseDir: packages/simple-react-app
+          args: -Dproject.settings=packages/simple-react-app/sonar-scanner.properties
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_SECRET_2 }}
           SONAR_HOST_URL: https://d4ef-171-103-29-110.ngrok-free.app
