@@ -1,8 +1,20 @@
 name: API SonarQube Analysis
 on:
-  pull_request:
+  push:
+    paths:
+      -  'packages/simple-express-server/**'
+      - '.github/workflows/**'
     branches:
-      - master # or your default branch name
+      - master
+
+  pull_request:
+    paths:
+      -  'packages/simple-express-server/**'
+      - '.github/workflows/**'
+    types:
+      - opened
+      - synchronize
+      - reopened
 jobs:
   sonarqube:
     runs-on: ubuntu-latest
